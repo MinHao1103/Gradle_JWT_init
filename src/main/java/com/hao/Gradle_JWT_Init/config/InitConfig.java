@@ -18,6 +18,7 @@ public class InitConfig {
     @PostConstruct
     public void init() {
         initJWT();
+        log.info("Swagger UI：http://localhost:8080/gradle_init/swagger-ui.html");
     }
 
     private void initJWT() {
