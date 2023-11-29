@@ -1,7 +1,9 @@
 package com.hao.Gradle_JWT_Init.controller;
 
 import com.hao.Gradle_JWT_Init.dto.in.TestCreateIn;
+import com.hao.Gradle_JWT_Init.dto.in.TestLogin;
 import com.hao.Gradle_JWT_Init.dto.in.TestUpdateIn;
+import com.hao.Gradle_JWT_Init.dto.out.TestLoginOut;
 import com.hao.Gradle_JWT_Init.dto.out.TestOut;
 import com.hao.Gradle_JWT_Init.service.TestService;
 import com.hao.Gradle_JWT_Init.utils.httpResult.CommonHttpResult;
@@ -72,6 +74,15 @@ public class TestController {
     @DeleteMapping("/{id}")
     public CommonHttpResult<Long> deleteUser(@PathVariable Long id) {
         return testService.deleteUser(id);
+    }
+
+    @Operation(summary = "login", responses = {
+            @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = CommonHttpResult.class))),
+            @ApiResponse(responseCode = "503", content = @Content(schema = @Schema(implementation = ErrorHttpResult.class)))
+    }, security = @SecurityRequirement(name = "Authorization"))
+    @PostMapping("/login")
+    public CommonHttpResult<TestLoginOut> login(@RequestBody TestLogin testLogin) {
+        return testService.login(testLogin);
     }
 
 }

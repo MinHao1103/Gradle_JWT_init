@@ -15,6 +15,7 @@ public class ErrorId {
     public static final int Test_Not_Found = 3001;
     public static final int Test_Update_Fail = 3002;
     public static final int Test_Delete_Fail = 3003;
+    public static final int Test_Find_Fail = 3004;
 
 }
 

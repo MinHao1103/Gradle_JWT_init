@@ -5,6 +5,7 @@ import com.hao.Gradle_JWT_Init.dto.in.TestUpdateIn;
 import com.hao.Gradle_JWT_Init.dto.out.TestOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -70,6 +71,18 @@ public class TestDao {
         parameters.addValue("id", id);
         int result = namedParameterJdbcTemplate.update(sql, parameters);
         return (result == 1) ? id : null;
+    }
+
+    public TestOut getUserByEmailAndPassword(String email, String password) {
+        String sql = "SELECT * FROM testTable WHERE email = :email AND password = :password";
+        MapSqlParameterSource parameters = new MapSqlParameterSource();
+        parameters.addValue("email", email);
+        parameters.addValue("password", password);
+        try {
+            return namedParameterJdbcTemplate.queryForObject(sql, parameters, new BeanPropertyRowMapper<>(TestOut.class));
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
 }
