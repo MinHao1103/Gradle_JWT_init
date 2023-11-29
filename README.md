@@ -13,7 +13,7 @@
 
 ## 【Idea 設定】
 
-* Smart Tomcat：[idea_tomcat_setup.png](__doc%2Fidea_tomcat_setup.png)[idea_tomcat_setup.jpg](__doc%2Fidea_tomcat_setup.jpg)
+* Smart Tomcat：[idea_tomcat_setup.png](__doc%2Fidea_tomcat_setup.png)
 * Unit Test：[Run_Tests_Using_IntelliJ.jpg](__doc%2FRun_Tests_Using_IntelliJ.jpg)
 * Datasource：[application.properties](src%2Fmain%2Fresources%2Fapplication.properties)
 
