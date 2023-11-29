@@ -28,11 +28,18 @@
 9. 使用 Postman 或 Swagger 測試 (測試資料表：[test.sql](__doc%2Fsql%2Ftest.sql))
 10. 創建新的 git 倉庫
 11. idea clone 專案，將原本調整好的資料夾檔案全部轉移到新的倉庫
-   ```text
-   git init
-   git add -f README.md
-   git add .
-   git status
-   git commit -m "[feat] 新增 Gradle 專案配置"
-   git push
-   ```   
+```text
+git init
+git add -f README.md
+git add .
+git status
+git commit -m "[feat] 新增 Gradle 專案配置"
+git push
+```   
+
+## 產生自簽 SSL 憑證
+1. 新增 [openssl.cnf](openssl.cnf) 檔案
+2. 生成 Private Key 指令：openssl genpkey -algorithm RSA -out private_key.pem
+3. 生成 CSR (Certificate Signing Request) 指令：openssl req -new -x509 -key private_key.pem -out certificate.pem -days
+   365 -config D:\springboot-mall/openssl.cnf
+
