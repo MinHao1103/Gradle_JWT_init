@@ -43,3 +43,5 @@ git push
 3. 生成 CSR (Certificate Signing Request) 指令：openssl req -new -x509 -key private_key.pem -out certificate.pem -days
    365 -config D:\springboot-mall/openssl.cnf
 
+## 替換 SSL 憑證
+1. 重新生成 Private Key 與 Certificate Signing Request 後，放在 [Config.java](src%2Fmain%2Fjava%2Fcom%2Fhao%2FGradle_JWT_Init%2Fconfig%2FConfig.java) 檔
