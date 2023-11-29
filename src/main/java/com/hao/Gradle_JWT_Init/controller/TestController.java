@@ -8,6 +8,7 @@ import com.hao.Gradle_JWT_Init.dto.out.TestOut;
 import com.hao.Gradle_JWT_Init.service.TestService;
 import com.hao.Gradle_JWT_Init.utils.httpResult.CommonHttpResult;
 import com.hao.Gradle_JWT_Init.utils.httpResult.ErrorHttpResult;
+import com.hao.Gradle_JWT_Init.utils.jwt.JwtData;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
@@ -17,9 +18,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Tag(name = "測試")
@@ -30,6 +34,8 @@ public class TestController {
 
     @Autowired
     private TestService testService;
+
+    private static Logger log = LoggerFactory.getLogger(TestController.class);
 
     @Operation(summary = "Create a new user", responses = {
             @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = CommonHttpResult.class))),
@@ -44,8 +50,10 @@ public class TestController {
             @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = CommonHttpResult.class))),
             @ApiResponse(responseCode = "503", content = @Content(schema = @Schema(implementation = ErrorHttpResult.class)))
     }, security = @SecurityRequirement(name = "Authorization"))
-    @GetMapping
-    public CommonHttpResult<List<TestOut>> getAllUsers() {
+    @GetMapping("/list")
+    public CommonHttpResult<List<TestOut>> getAllUsers(HttpServletRequest request) {
+        JwtData info = (JwtData) request.getAttribute("LoginInfo");
+        log.info(info.toString());
         return testService.getAllUsers();
     }
 

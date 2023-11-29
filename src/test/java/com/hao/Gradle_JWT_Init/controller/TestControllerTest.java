@@ -38,7 +38,7 @@ class TestControllerTest extends BaseServiceTest {
 
     @Test
     void b_getAllUsers() {
-        CommonHttpResult<List<TestOut>> result = testController.getAllUsers();
+        CommonHttpResult<List<TestOut>> result = testController.getAllUsers(createMockRequest());
         assertNotNull(result);
         assertNotNull(result.getData());
     }
