@@ -19,12 +19,12 @@
 
 ## 【使用範例】
 1. clone 專案
-3. 調整 settings.gradle 名稱
+3. 調整 [settings.gradle](settings.gradle) 名稱
 4. 調整 src.main.java 的 package 名稱
-5. 調整 Gradle_InitApplication.java 名稱
-6. 調整 Datasource 配置
-7. 配置 smart tomcat
-8. 調整 Unit Test 設定
+5. 調整 [Gradle_JWT_InitApplication.java](src%2Fmain%2Fjava%2Fcom%2Fhao%2FGradle_JWT_Init%2FGradle_JWT_InitApplication.java) 名稱
+6. 調整 [Datasource](src%2Fmain%2Fresources%2Fapplication.properties) 配置
+7. 配置 [smart tomcat](__doc%2Fidea_tomcat_setup.png)
+8. 調整 [Unit Test](__doc%2FRun_Tests_Using_IntelliJ.jpg) 設定
 9. 使用 Postman 或 Swagger 測試 (測試資料表：[test.sql](__doc%2Fsql%2Ftest.sql))
 10. 創建新的 git 倉庫
 11. idea clone 專案，將原本調整好的資料夾檔案全部轉移到新的倉庫
@@ -33,7 +33,7 @@ git init
 git add -f README.md
 git add .
 git status
-git commit -m "[feat] 新增 Gradle 專案配置"
+git commit -m "<1.0.0> [feat] init"
 git push
 ```   
 
