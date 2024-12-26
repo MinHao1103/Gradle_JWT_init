@@ -23,6 +23,18 @@ repositories {
     mavenCentral()
 }
 
+tasks.named('bootBuildImage') {
+    builder = 'paketobuildpacks/builder-jammy-base:latest'
+}
+
+tasks.test {
+    useJUnitPlatform()
+    reports {
+        html.required = true
+    }
+    enabled = true
+}
+
 dependencies {
 
     // Spring Boot
@@ -32,7 +44,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // MySQL
-    implementation 'mysql:mysql-connector-java:8.0.23'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.1.4'
 
     // Swagger
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0'
@@ -48,13 +60,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
-}
+    // Gson
+    implementation 'com.google.code.gson:gson:2.11.0'
 
-tasks.named('bootBuildImage') {
-    builder = 'paketobuildpacks/builder-jammy-base:latest'
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
-    exclude '*'
 }

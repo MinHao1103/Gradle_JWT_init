@@ -4,7 +4,7 @@
 
 * Java：21
 * SpringBoot：3.4.0
-* Database：MySQL-8.0.23
+* mariadb：3.1.4
 * Tomcat：10
 
 ## 【API 文件】
