@@ -2,27 +2,29 @@
 
 ## 【版本】
 
-* Java：8
-* SpringBoot：2.7.10
+* Java：21
+* SpringBoot：3.4.0
 * Database：MySQL-8.0.23
+* Tomcat：10
 
 ## 【API 文件】
 
 * Postman：[Gradle_Init.postman_collection.json](__doc%2FGradle_Init.postman_collection.json)
-* Swagger：http://localhost:8080/gradle_Init/swagger-ui.html
+* Swagger：http://localhost:8080/gradle_JWT_Init/swagger-ui.html
 
 ## 【Idea 設定】
 
-* Smart Tomcat：[idea_tomcat_setup.png](__doc%2Fidea_tomcat_setup.png)
-* Unit Test：[Run_Tests_Using_IntelliJ.jpg](__doc%2FRun_Tests_Using_IntelliJ.jpg)
-* Datasource：[application.properties](src%2Fmain%2Fresources%2Fapplication.properties)
+* [Project_SDK.png](__doc%2FProject_SDK.png)
+* [Gradle_JVM.png](__doc%2FGradle_JVM.png)
+* [Smart Tomcat](__doc%2Ftomcat_setup.png)
+* [Unit Test](__doc%2FRun_Tests_Using_IntelliJ.jpg)
 
 ## 【使用範例】
 1. clone 專案
 3. 調整 [settings.gradle](settings.gradle) 名稱
 4. 調整 src.main.java 的 package 名稱
 5. 調整 [Gradle_JWT_InitApplication.java](src%2Fmain%2Fjava%2Fcom%2Fhao%2FGradle_JWT_Init%2FGradle_JWT_InitApplication.java) 名稱
-6. 調整 [Datasource](src%2Fmain%2Fresources%2Fapplication.properties) 配置
+6. 調整 [Server configuration 及 Datasource](src%2Fmain%2Fresources%2Fapplication.properties) 配置
 7. 配置 [smart tomcat](__doc%2Fidea_tomcat_setup.png)
 8. 調整 [Unit Test](__doc%2FRun_Tests_Using_IntelliJ.jpg) 設定
 9. 使用 Postman 或 Swagger 測試 (測試資料表：[test.sql](__doc%2Fsql%2Ftest.sql))

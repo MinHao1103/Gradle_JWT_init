@@ -1,13 +1,12 @@
 package com.hao.Gradle_JWT_Init.config;
 
 import com.hao.Gradle_JWT_Init.utils.jwt.JwtUtil;
+import jakarta.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
-import javax.annotation.PostConstruct;
 
 @Configuration
 @EnableWebMvc
@@ -18,7 +17,7 @@ public class InitConfig {
     @PostConstruct
     public void init() {
         initJWT();
-        log.info("Swagger UI：http://localhost:8080/gradle_init/swagger-ui.html");
+        log.info("Swagger UI：http://localhost:8080/gradle_JWT_Init/swagger-ui.html");
     }
 
     private void initJWT() {

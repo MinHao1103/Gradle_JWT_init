@@ -3,13 +3,12 @@ package com.hao.Gradle_JWT_Init.interceptor;
 import com.hao.Gradle_JWT_Init.exception.JwtVerificationException;
 import com.hao.Gradle_JWT_Init.utils.jwt.JwtData;
 import com.hao.Gradle_JWT_Init.utils.jwt.JwtUtil;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import static com.hao.Gradle_JWT_Init.define.Constance.AUTHORIZATION_PROPERTY;
 
@@ -33,7 +32,6 @@ public class JWTInterceptor implements HandlerInterceptor {
         String token = request.getHeader(AUTHORIZATION_PROPERTY);
         try {
             JwtData jwtData = JwtUtil.verifyToken(token);
-            log.info("id: " + jwtData.getId());
             return jwtData;
         } catch (Exception e) {
             log.info("JWT Token Verification Failed");

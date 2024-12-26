@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "5cf27a79-b3a3-4a1b-9f76-3b6ef53c4ccc",
-		"name": "Gradle_Init",
+		"_postman_id": "c20e9038-f489-45af-ba28-70d551ed15b1",
+		"name": "gradle_JWT_Init",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26469706"
 	},
@@ -30,127 +30,16 @@
 							}
 						},
 						"url": {
-							"raw": "{{domain}}/gradle_init/v1/test",
+							"raw": "http://localhost:8080/gradle_JWT_Init/v1/test",
+							"protocol": "http",
 							"host": [
-								"{{domain}}"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
-								"gradle_init",
+								"gradle_JWT_Init",
 								"v1",
 								"test"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all users",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{domain}}/gradle_init/v1/test/list",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"gradle_init",
-								"v1",
-								"test",
-								"list"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get user by ID",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{domain}}/gradle_init/v1/test/1",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"gradle_init",
-								"v1",
-								"test",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update user by ID",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"password\": \"123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{domain}}/gradle_init/v1/test/1",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"gradle_init",
-								"v1",
-								"test",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete user by ID",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{domain}}/gradle_init/v1/test/1",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"gradle_init",
-								"v1",
-								"test",
-								"1"
 							]
 						}
 					},
@@ -177,15 +66,138 @@
 							}
 						},
 						"url": {
-							"raw": "{{domain}}/gradle_init/v1/test/login",
+							"raw": "http://localhost:8080/gradle_JWT_Init/v1/test/login",
+							"protocol": "http",
 							"host": [
-								"{{domain}}"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
-								"gradle_init",
+								"gradle_JWT_Init",
 								"v1",
 								"test",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxIiwiZW1haWwiOiJleGFtcGxlQGV4YW1wbGUuY29tIn0.PORqQ1rWGDDDjqYX9OFrgj-jtG_fsYs3YJtoUlE4jSLHULvWgZBXnbqoJutteuNf540HBQb4pEA1Z-eeqdPXLqTsppqkcAvJTdM7qSxSxm9UU-1iSeT5zLsoKAPVLZQktyLzloaM_C-2tV_XXBILBeeaZ4VwYHXfuiqHB4My1tC2NzBUafl8io8fcy_Q_wZO9Zf6Qj2gDSuIk0NF3D4XAoDoKNer-NLMLTzgLFtLkWS5oTYB_Bi0oruBFu81ncOAnG_YU3fveWab0Qc9IMkGo5g1lXgGPY9F4DoiW2MlyfVB2IHXDpS93HiXd-0rjpit_NUeaVW2JaB_Xq30aLoFkg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/gradle_JWT_Init/v1/test/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gradle_JWT_Init",
+								"v1",
+								"test",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxIiwiZW1haWwiOiJleGFtcGxlQGV4YW1wbGUuY29tIn0.PORqQ1rWGDDDjqYX9OFrgj-jtG_fsYs3YJtoUlE4jSLHULvWgZBXnbqoJutteuNf540HBQb4pEA1Z-eeqdPXLqTsppqkcAvJTdM7qSxSxm9UU-1iSeT5zLsoKAPVLZQktyLzloaM_C-2tV_XXBILBeeaZ4VwYHXfuiqHB4My1tC2NzBUafl8io8fcy_Q_wZO9Zf6Qj2gDSuIk0NF3D4XAoDoKNer-NLMLTzgLFtLkWS5oTYB_Bi0oruBFu81ncOAnG_YU3fveWab0Qc9IMkGo5g1lXgGPY9F4DoiW2MlyfVB2IHXDpS93HiXd-0rjpit_NUeaVW2JaB_Xq30aLoFkg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/gradle_JWT_Init/v1/test/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gradle_JWT_Init",
+								"v1",
+								"test",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxIiwiZW1haWwiOiJleGFtcGxlQGV4YW1wbGUuY29tIn0.PORqQ1rWGDDDjqYX9OFrgj-jtG_fsYs3YJtoUlE4jSLHULvWgZBXnbqoJutteuNf540HBQb4pEA1Z-eeqdPXLqTsppqkcAvJTdM7qSxSxm9UU-1iSeT5zLsoKAPVLZQktyLzloaM_C-2tV_XXBILBeeaZ4VwYHXfuiqHB4My1tC2NzBUafl8io8fcy_Q_wZO9Zf6Qj2gDSuIk0NF3D4XAoDoKNer-NLMLTzgLFtLkWS5oTYB_Bi0oruBFu81ncOAnG_YU3fveWab0Qc9IMkGo5g1lXgGPY9F4DoiW2MlyfVB2IHXDpS93HiXd-0rjpit_NUeaVW2JaB_Xq30aLoFkg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/gradle_JWT_Init/v1/test/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gradle_JWT_Init",
+								"v1",
+								"test",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxIiwiZW1haWwiOiJleGFtcGxlQGV4YW1wbGUuY29tIn0.PORqQ1rWGDDDjqYX9OFrgj-jtG_fsYs3YJtoUlE4jSLHULvWgZBXnbqoJutteuNf540HBQb4pEA1Z-eeqdPXLqTsppqkcAvJTdM7qSxSxm9UU-1iSeT5zLsoKAPVLZQktyLzloaM_C-2tV_XXBILBeeaZ4VwYHXfuiqHB4My1tC2NzBUafl8io8fcy_Q_wZO9Zf6Qj2gDSuIk0NF3D4XAoDoKNer-NLMLTzgLFtLkWS5oTYB_Bi0oruBFu81ncOAnG_YU3fveWab0Qc9IMkGo5g1lXgGPY9F4DoiW2MlyfVB2IHXDpS93HiXd-0rjpit_NUeaVW2JaB_Xq30aLoFkg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/gradle_JWT_Init/v1/test/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gradle_JWT_Init",
+								"v1",
+								"test",
+								"1"
 							]
 						}
 					},

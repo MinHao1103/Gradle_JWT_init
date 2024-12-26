@@ -9,25 +9,39 @@ import com.hao.Gradle_JWT_Init.dto.out.TestOut;
 import com.hao.Gradle_JWT_Init.utils.httpResult.CommonHttpResult;
 import com.hao.Gradle_JWT_Init.utils.jwt.JwtData;
 import com.hao.Gradle_JWT_Init.utils.jwt.JwtUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.hao.Gradle_JWT_Init.define.ErrorId.*;
+import static com.hao.Gradle_JWT_Init.define.ErrorId.SUCCESS;
+import static com.hao.Gradle_JWT_Init.define.ErrorId.Test_Delete_Fail;
+import static com.hao.Gradle_JWT_Init.define.ErrorId.Test_Find_Fail;
+import static com.hao.Gradle_JWT_Init.define.ErrorId.Test_Insert_Fail;
+import static com.hao.Gradle_JWT_Init.define.ErrorId.Test_Not_Found;
+import static com.hao.Gradle_JWT_Init.define.ErrorId.Test_Update_Fail;
 
 @Service
 public class TestService {
 
     private static String TAG = "TestService";
 
+    private static Logger log = LoggerFactory.getLogger(TestService.class);
+
     @Autowired
     private TestDao testDao;
 
     public CommonHttpResult<Long> createUser(TestCreateIn testCreateIn) {
-        Long result = testDao.createUser(testCreateIn);
-        return new CommonHttpResult<>(result != null ? SUCCESS : Test_Insert_Fail, result);
+        try {
+            Long result = testDao.createUser(testCreateIn);
+            return new CommonHttpResult<>(result != null ? SUCCESS : Test_Insert_Fail, result);
+        } catch (Exception e) {
+            log.error(" Error in createUser: ", e);
+            return new CommonHttpResult<>(Test_Insert_Fail, null);
+        }
     }
 
     public CommonHttpResult<List<TestOut>> getAllUsers() {
