@@ -1,0 +1,8 @@
+-- 20241227 新增 testTable
+CREATE TABLE IF NOT EXISTS `testTable` (
+  `id` BIGINT(20) AUTO_INCREMENT PRIMARY KEY COMMENT '自增主鍵',
+  `password` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '用戶密碼',
+  `email` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '唯一電子郵件',
+  `createdDate` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '創建時間',
+  UNIQUE KEY `unique_email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='測試表，用於存儲用戶資訊';
